@@ -8,9 +8,41 @@
   <title>Tamagotchi</title>
 </head>
 <body>
-  // Add buttons to the screen to feed your pet, turn off the lights, and play with your pet.
+  
   <div class="container">
-     
+    <div class="header">
+      <h1>Tamagotchi</h1>
+    </div>
+    <div class="content">
+      <div class="left">
+        <div class="pet">
+          <div class="pet-image">
+            <img src="images/pet.png" alt="pet">
+          </div>
+          <div class="pet-info">
+            <h2>Your Pet</h2>
+            <p>Name: <span class="pet-name"></span></p>
+            <p>Age: <span class="pet-age"></span></p>
+            <p>Hunger: <span class="pet-hunger"></span></p>
+            <p>Sleep: <span class="pet-sleep"></span></p>
+            <p>Fun: <span class="pet-fun"></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="actions">
+          <button class="action-button feed">Feed</button>
+          <button class="action-button sleep">Sleep</button>
+          <button class="action-button play">Play</button>
+          <button class="action-button reset">Reset</button>
+        </div>
+      </div>
+    </div>
+    
   </div>
+ 
+ 
+    
+  <script src="js/app.js"></script>
 </body>
 </html>
