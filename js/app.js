@@ -124,9 +124,25 @@ class Pet{
                     
 
            // Handlers and Listeners for the game
+           // feed button
            $('#feed').on('click', (e) => {
             console.log('feed was clicked');
             game.petInstance.hunger = game.petInstance.hunger - 1;
             console.log(`Hunger level is now: ${game.petInstance.hunger}`);
            });
-                     
+
+           // toggle lights button
+              $('#toggleLights').on('click', (e) => {
+                console.log('toggle lights was clicked');
+                game.petInstance.sleep = game.petInstance.sleep -= 1;
+                $('#numbersContainer').css('background-color', 'rgba(0,0,0,0.5)');
+                game.toggleLights = !game.toggleLights;
+                if (game.toggleLights === false){
+                    game.toggleLights = true;
+                    $('#numbersContainer').css('background-color', 'rgba(0,0,0,0)');
+                    game.petInstance.sleep  -= 1;
+                } else {
+                    game.toggleLights = true;
+                }
+            });
+
