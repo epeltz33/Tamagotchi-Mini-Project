@@ -2,49 +2,51 @@
 
 // Create an Object or Class (look at your notes on JS Classes if you forgot) for your Tamagotchi
 
-class Tamagotchi {
- constructor( name, age, hunger, sleepiness, boredom ) {
-   this.name = "";
-   this.hunger = 0;
-   this.sleep = 0;
-   this.boredom = 0;
-   this.age = 0;
-   this.alive = true;
- }
- // Increase your pet's age every x minutes
-  increaseAge() {
-      this.age++;
+ // Tamagotchi
 
-      this.age > 10 ? this.alive = false : this.age < 1 ? this.alive = false : this.alive = true; // if age is greater than 10, pet is dead and if age is less than 1, pet is dead
-  }
-  // Increase your pet's hunger every x minutes
-  increaseHunger() {
-      this.hunger++;
+// Create an Object or Class (look at your notes on JS Classes if you forgot) for your Tamagotchi
 
-      this.hunger > 10 ? this.alive = false : this.hunger < 1 ? this.alive = false : this.alive = true; // if hunger is greater than 10, pet is dead and if hunger is less than 1, pet is dead
-  }
-  // Increase your pet's sleepiness every x minutes
-  increaseSleep() {
-      this.sleep++;
-
-      this.sleep > 10 ? this.alive = false : this.sleep < 1 ? this.alive = false : this.alive = true; // if sleep is greater than 10, pet is dead and if sleep is less than 1, pet is dead
-  }
-  // Increase your pet's boredom every x minutes
-  increaseBoredom() {
-      this.boredom++;
-
-      this.boredom > 10 ? this.alive = false : this.boredom < 1 ? this.alive = false : this.alive = true; // if boredom is greater than 10, pet is dead and if boredom is less than 1, pet is dead
-  }
-  // Feed your pet
-  feed() {
+class Pet{
+    constructor( name,) {
+      this.name = name;
       this.hunger = 0;
-       
-  }
-
-
-
- 
-   
-  
-}
-
+      this.sleep = 0;
+      this.boredom = 0;
+      this.age = 0;
+      this.alive = true;
+      this.toggleLights = true; 
+    }
+    
+   };
+   // setting up the game object
+   const game = {
+    timeHandler: 0,
+    toggleLights: true,
+    petInstance: null,
+    start: function(){
+        const tamagotchi = new Pet('Tamagotchi');
+        this.petInstance = tamagotchi;
+        setInterval(function(){
+            game.hungerIncreasing();
+            game.ageincreasing();
+            game.boredomIncreasing();
+            game.sleepIncreasing();
+            game.displayName();
+            game.displayHunger();
+            game.toggleLights();
+            game.displaySleep();
+            game.displayBoredom();
+            game.displayAge();
+            game.timeHandler = game.timeHandler + 1;
+            game.death();
+            game.morphe();
+            game.animation();
+            console.log(game.petInstance);
+            }, 1000);
+            if (this.petInstance.alive = false){
+                console.log('Your Tamagotchi is dead');
+                clearInterval(death());
+                    
+            }
+    }
+   }
