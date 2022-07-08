@@ -49,6 +49,7 @@ class Pet{
                     
             }
     },
+    
     hungerIncreasing: function(){
         if (this.timeHandler % 10 === 0){
             this.petInstance.hunger = this.petInstance.hunger + 1;
@@ -69,18 +70,55 @@ class Pet{
             this.petInstance.age = this.petInstance.age + 1;
             }
             },
+            death: function(){
+                if(this.petInstance.hunger >= 10 || this.petInstance.sleep >= 10 || this.petInstance.boredom >= 10
+                     this.alive = false){
+                        this.game = null;
+                        this.setInterval = null;
+                        this.timeHandler = 0;
+                        console.log('Your Tamagotchi is dead');
+                     }
+                    },
+
             displayName: function(){
-                const $nameContainer = $('#name').val();// getting the value of the name 
+                const $nameContainer = $('#name').val();
                 $('#nameDisplay').text(`${this.petInstance.name}`).val();
                 ;
             },
             displayAge: function(){
-                $('#ageDisplay').text(`${this.petInstance.age}`);
+                $('#ageOutput').text(`${this.petInstance.age}`);
             },
-            
+            displayHunger: function(){
+                $('#hungerOutput').text(`${this.petInstance.hunger}`);
+                $('#hungerOutput').val('');
+            },
+            displaySleep: function(){
+                $('#sleepOutput').text(`${this.petInstance.sleep}`);
+                $('#sleepOutput').val('');
 
-
-
-
-        
-   }
+            },
+            displayBoredom: function(){
+                $('#boredomOutput').text(`${this.petInstance.boredom}`);
+                $('#boredomOutput').val('');
+            },
+            animation: function(){
+                if(this.timeHandler % 3 === 0){
+                    $('image').css('padding-right', 0);
+                    $('image').css('padding-left', '100px');
+                }
+                else if(this.timeHandler % 3 === 1){
+                    $('image').css('padding-right', '100px');
+                    $('image').css('padding-left', 0);
+                }
+            },
+            morphe: function(){
+                if(this.petInstance.age % 4 === 0){
+                    let move = Math.random();
+                    $('#avatarContainer').css('opacity', `${move}`);
+                } else {
+                    $('#avatarContainer').css('opacity', 1);
+                    }
+                },
+           
+                     }
+                    
