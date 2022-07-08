@@ -122,3 +122,11 @@ class Pet{
            
                      }
                     
+
+           // Handlers and Listeners for the game
+           $('#feed').on('click', (e) => {
+            console.log('feed was clicked');
+            game.petInstance.hunger = game.petInstance.hunger - 1;
+            console.log(`Hunger level is now: ${game.petInstance.hunger}`);
+           });
+                     
