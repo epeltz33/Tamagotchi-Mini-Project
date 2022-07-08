@@ -145,4 +145,10 @@ class Pet{
                     game.toggleLights = true;
                 }
             });
+            // play button
+            $('#play').on('click', (e) => {
+                console.log('play was clicked');
+                game.petInstance.boredom = game.petInstance.boredom - 1;
+                console.log(`Boredom level is now: ${game.petInstance.boredom}`);
+            });
 
