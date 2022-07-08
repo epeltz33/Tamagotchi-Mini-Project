@@ -69,8 +69,18 @@ class Pet{
             this.petInstance.age = this.petInstance.age + 1;
             }
             },
-            displayHunger: function(){
-                         
+            displayName: function(){
+                const $nameContainer = $('#name').val();// getting the value of the name 
+                $('#nameDisplay').text(`${this.petInstance.name}`).val();
+                ;
+            },
+            displayAge: function(){
+                $('#ageDisplay').text(`${this.petInstance.age}`);
+            },
+            
+
+
+
 
         
    }
