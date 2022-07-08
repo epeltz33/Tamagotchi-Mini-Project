@@ -151,4 +151,13 @@ class Pet{
                 game.petInstance.boredom = game.petInstance.boredom - 1;
                 console.log(`Boredom level is now: ${game.petInstance.boredom}`);
             });
+            // Name button
+            $('#nameButton').on('click', () => {
+                const petNaming = $('#name').val();
+                console.log(`${petNaming} is healthy! Take care of it!`);
+                game.start();
+            });
+            
+
+
 
