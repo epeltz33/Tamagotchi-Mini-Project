@@ -48,5 +48,29 @@ class Pet{
                 clearInterval(death());
                     
             }
-    }
+    },
+    hungerIncreasing: function(){
+        if (this.timeHandler % 10 === 0){
+            this.petInstance.hunger = this.petInstance.hunger + 1;
+        }
+    },
+    sleepIncreasing: function(){ 
+        if (this.timeHandler % 5 === 0){
+            this.petInstance.sleep = this.petInstance.sleep + 1;
+        }
+        },
+    boredomIncreasing: function(){
+        if (this.timeHandler % 3 === 0){
+            this.petInstance.boredom = this.petInstance.boredom + 1;
+        }
+    },
+    ageincreasing: function(){
+        if (this.timeHandler % 4 === 0){
+            this.petInstance.age = this.petInstance.age + 1;
+            }
+            },
+            displayHunger: function(){
+                         
+
+        
    }
