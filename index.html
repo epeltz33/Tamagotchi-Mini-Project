@@ -9,40 +9,40 @@
 </head>
 <body>
   
-  <div class="container">
-    <div class="header">
-      <h1>Tamagotchi</h1>
+ <div id="numbersContainer">
+  <div id="hunger">Hunger: 
+   <div> id="hungerOutput"
     </div>
-    <div class="content">
-      <div class="left">
-        <div class="pet">
-          <div class="pet-image">
-            <img src="images/pet.png" alt="pet">
-          </div>
-          <div class="pet-info">
-            <h2>Your Pet</h2>
-            <p>Name: <span class="pet-name"></span></p>
-            <p>Age: <span class="pet-age"></span></p>
-            <p>Hunger: <span class="pet-hunger"></span></p>
-            <p>Sleep: <span class="pet-sleep"></span></p>
-            <p>Fun: <span class="pet-fun"></span></p>
-          </div>
-        </div>
-      </div>
-      <div class="right">
-        <div class="actions">
-          <button class="action-button feed">Feed</button>
-          <button class="action-button sleep">Sleep</button>
-          <button class="action-button play">Play</button>
-          <button class="action-button reset">Reset</button>
-        </div>
-      </div>
-    </div>
-    <div class background-image="images/background.jpg"></div>
   </div>
- 
- 
-    
-  <script src="js/app.js"></script>
+    <div id="sleepiness">Sleepiness: 
+     <div> id="sleepinessOutput"
+      </div>
+    </div>
+      <div id="boredom">Boredom: 
+       <div> id="boredomOutput"
+        </div>
+      </div>
+        <div id="age">Age: 
+         <div> id="ageOutput"
+          </div>
+            </div>
+        </div>
+        
+<div id="nameContainer">
+  <input type="text" id="name" placeholder="Enter your name!!">
+  <input type="button" id="start" value="Start">
+</div>
+<div id="avatarContainer">
+  <img id="avatar" class="on" src="images/avatar.png">
+</div>
+<div id="nameDisplay">
+  <h1 id="nameDisplayOutput"></h1>
+</div>
+<div id="buttonContainer">
+  <input type="button" id="feed" value="Feed">
+  <input type="button" id="play" value="Play">
+  <input type="button" id="toggleLights" value="Toggle Lights">
 </body>
+<scrip src="js/app.js"></scrip>
+  
 </html>
