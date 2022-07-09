@@ -29,6 +29,10 @@ class pet {
         this.boredom += 10;
     }
 }
+// instantiate your Tamagotchi
+
+const tamagotchi = new pet('Tamagotchi', 0, 0, 0, 0); // name, age, hunger, sleepiness, boredom (all 0)
+
 
 
 
