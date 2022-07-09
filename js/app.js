@@ -33,6 +33,14 @@ class pet {
 
 const tamagotchi = new pet('Tamagotchi', 0, 0, 0, 0); // name, age, hunger, sleepiness, boredom (all 0)
 
+// add a name
+function name() {
+    let name = document.getElementById('name').value; // get the value of the input
+    document.getElementById('name').value = `I am ${name}`; // set the value of the input to the name
+};
+
+   
+
 
 
 
