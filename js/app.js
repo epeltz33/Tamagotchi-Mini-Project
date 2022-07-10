@@ -4,43 +4,35 @@
 
 // Create a constructor function for your Tamagotchi
 
-class pet {
+class Tamagotchi {
     constructor(name, age, hunger, sleepiness, boredom) {
         this.name = name;
         this.age = age;
         this.hunger = hunger;
         this.sleepiness = sleepiness;
         this.boredom = boredom;
-    }
-    // methods for your Tamagotchi that will update its stats
+    };
+     
+    ageIncrement() {
+        this.age++;
+        this.hunger++;
+        updateStats();
+        changePic();
+        };
+
     feed() {
-        this.hunger -= 10;
+        if (this.hunger > 10) {
+            return "Your Tamagotchi is full!";
+            else if (this.hunger < 1){
+                this.hunger = 0; // reset the counter to zero
+                }
+                else{
+                    this.hunger--;
+                 }
+                 updateStats();
+                 }   // decrement the counter by one 
+            }
+     
     }
-    sleep() {
-        this.sleepiness -= 10;
-    }
-    play() {
-        this.boredom -= 10;
-    }
-    update() {
-        this.age += 1;
-        this.hunger += 10;
-        this.sleepiness += 10;
-        this.boredom += 10;
-    }
-}
-// instantiate your Tamagotchi
 
-const tamagotchi = new pet('Tamagotchi', 0, 0, 0, 0); // name, age, hunger, sleepiness, boredom (all 0)
-
-// add a name
-function name() {
-    let name = document.getElementById('name').value; // get the value of the input
-    document.getElementById('name').value = `I am ${name}`; // set the value of the input to the name
-};
-
-   
-
-
-
-
+    

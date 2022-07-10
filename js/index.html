@@ -9,76 +9,27 @@
 </head>
 <body>
   <h1>Welcome to your Tamagotchi!</h1>
-  <div id="preface">
-    <h2>How to Play</h2>
-    <ul>
-    <p>Your pet has 3 core life stats</p>
-    <p>Hunger:(1-10 scale)</p>
-    <p>Sleepiness:(1-10 scale)</p>
-    <p>Boredom:(1-10 scale)</p>
-  </ul>
-    <p>If your pets stats hit 10 or 0 your pet will die!</p>
-   </div>
-   <div id="name">
-    <h2>Enter your pet's name</h2>
+  <h2 id="name">Name</h2>
+  <div id="stats">
+    <h2>Stats</h2>
+    <p>
+      <span id="hunger">Hunger: </span>
+      <span id="boredom">Boredom: </span>
+      <span id="sleep">Sleep: </span>
+    </p>
   </div>
-    
-      <form>
-        <input type="text" id="pname" placeholder=" Enter your pet's name">
-        <input type="button" id="submit" type="submit" value="Submit" onclick="petsName()">
-      </form>
-      <div class="container">
-        <div class="pet">
-          <div class="pet-name">
-            <h2 id="pet-name"></h2>
-          </div>
-          <div class="pet-stats">
-            <div class="pet-age">
-              <h3>Age</h3>
-              <p id="pet-age"></p>
-               <span id="pet-age">0</span>
-            </div>
-            <div class="pet-hunger">
-                <span class="attribute"><span id="hunger-amount">Hunger Level</span></span>
-                <span class="value"><span id="hunger-value">0</span></span>
-                <input id="feed" type="button" value="Feed">
-                 </div>
-                 <div class="pet-sleepiness">
-                  <span class="attribute"><span id="sleepiness-amount">Sleep Level</span></span>
-                  <span class="value"><span id="sleep-value">0</span></span>
-                  <input id="sleep" type="button" value="Go to sleep">
-                  <input id="wake" type="button" value="Wake up">
-                   </div>
-                    <div class="pet-boredom">
-                      <span class="attribute"><span id="boredom-amount">Boredom</span></span>
-                      <span class="value"><span id="boredom-value">0</span></span>
-                      <input id="play" type="button" value="Play">
-                      </div>
-                       </div>
-
-                        
-                 
-                
-                  </div>
-            </div>
-            <div class="pet-sleep">
-              <h2 id="pet-sleep"></h2>
-            </div>
-            <div class="pet-boredom">
-              <h2 id="pet-boredom"></h2>
-            </div>
-          </div>
-
-          
-           
-          
-        
-      
-   
-
-    
-
-        
+  <div id="buttons">
+    <button id="feed">Feed</button>
+    <button id="play">Play</button>
+    <button id="sleep">Sleep</button>
+    <button id="lights">Lights</button>
+    <button id="reset">Reset</button>
+  </div>
+  <form id="start">
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="name" placeholder="Give your pet a name!">
+    <button onclick="name();" type="submit">Start</button>
+  </form>
  
   
 </body>
