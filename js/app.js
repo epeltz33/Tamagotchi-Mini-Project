@@ -1,6 +1,9 @@
 // Tamagotchi
 
-// Create an Object or Class (look at your notes on JS Classes if you forgot) for your Tamagotchi
+// DOM elements
+const background = document.getElementById("background");
+
+
 
 // Create a constructor function for your Tamagotchi
 
@@ -55,8 +58,49 @@ toggleLights = () => {
         updateSleep();
         console.log("The lights off");
         }
-        
-       
-}
- 
 
+       
+}// function to update the stats of the pet
+const updateHunger = () => {
+    Pet.hunger.innerText = `Hunger: ${Pet.hunger}`;
+    console.log("Pet.hunger has been updated");
+}
+const updateSleep = () => {
+    Pet.sleep.innerText = `Sleep: ${Pet.sleep}`;
+    console.log("Pet.sleep has been updated");
+}
+const updateBoredom = () => {
+    Pet.boredom.innerText = `Boredom: ${Pet.boredom}`;
+    console.log("Pet.boredom has been updated");
+    }
+
+const updateAge = () => {
+    Pet.age.innerText = `Age: ${Pet.age}`;
+    console.log("Pet.age has been updated");
+}
+const updateEverything = () => {  
+    updateHunger();
+    updateSleep();
+    updateBoredom();
+    updateAge();
+}
+// run all functions at set intervals
+const runTimer = () => {
+    let clock = setInterval(() => {
+        updateAge();
+        updateHunger();
+        updateSleep();
+        updateBoredom();
+        if (Pet.hunger >= 10 || Pet.hunger <= 0 || Pet.sleep >= 10 || Pet.boredom >= 10) {
+            clearInterval(clock)
+            Pet.isAlive = false;
+            alert("Your pet has died");
+        }
+        }, 15000);
+    }
+   // let game loop
+   const game = () => {
+    if (Pet.isAlive) {
+        runTimer();
+    }
+}
