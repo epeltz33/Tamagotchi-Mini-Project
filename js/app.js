@@ -1,29 +1,36 @@
-// Tamagotchi
 
-// DOM elements
+
+// DOM elements to update the stats
 const background = document.getElementById("background");
-
-
+const petInput = document.getElementById("pet-name");
+const petName = document.getElementById("name");
+const petAge = document.getElementById("age");
+const petHunger = document.getElementById("hunger");
+const petSleep = document.getElementById("sleep");
+const play = document.getElementById("play");
+const start = document.getElementById("start");
+const lights = document.getElementById("light");
+const feed = document.getElementById("feed");
+// placeholder for the name of the pet
+let inputName = "";
 
 // Create a constructor function for your Tamagotchi
 
 // pet class
 const Pet = {
-    name: '',
-    age: 0,
-    hunger: 0,
-    sleep: 0,
-    boredom: 0,
+    name: "",
+    age: 1,
+    hunger: 6,
+    sleep: 1,
+    boredom: 1,
     lightsOn: true,
-    isAlive: true,
-
-
+   
 }
 // functions to  increase the stats of the pet
 const increaseHunger = () => {
     Pet.hunger++;
     updateHunger(); // update the hunger stat
-    console.log`${Pet.name} is hungry`;
+    console.log`${Pet.name} is getting very hungry`;
 }
 const increaseSleep = () => {
     Pet.sleep++;
@@ -58,6 +65,14 @@ toggleLights = () => {
         updateSleep();
         console.log("The lights off");
         }
+        play: () => {
+            if (Pet.boredom > 0) {
+                Pet.boredom--;
+                updateBoredom();
+                console.log("This is fun!");
+            }
+            
+            
 
        
 }// function to update the stats of the pet
@@ -79,10 +94,11 @@ const updateAge = () => {
     console.log("Pet.age has been updated");
 }
 const updateEverything = () => {  
+    updateAge();
     updateHunger();
     updateSleep();
     updateBoredom();
-    updateAge();
+   
 }
 // run all functions at set intervals
 const runTimer = () => {
@@ -98,9 +114,26 @@ const runTimer = () => {
         }
         }, 15000);
     }
-   // let game loop
-   const game = () => {
-    if (Pet.isAlive) {
+   // start the game when the start button is clicked
+   const gameOpen= () => {
+    start.addEventListener("click", () => {
+        inputName = petInput.value;
+        Pet.name = inputName;
+        petName.innerText = `Name: ${Pet.name}`;
+        petAge.innerText = `Age: ${Pet.age}`;
+        petHunger.innerText = `Hunger: ${Pet.hunger}`;
+        petSleep.innerText = `Sleep: ${Pet.sleep}`;
+        play.innerText = `Play: ${Pet.boredom}`;
+        start.style.display = "none";
+        petInput.style.display = "none";
         runTimer();
+        console.log("Game has started");
     }
+    )
+    // name the pet and start the game with the name
+    const nameIt = () => {
+        inputName = petInput.value;
+        updateAll();
+        play.addEventListener("click", () => {
+    
 }

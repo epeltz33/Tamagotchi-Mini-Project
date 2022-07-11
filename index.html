@@ -12,28 +12,24 @@
   <h2 id="name">Name</h2>
   <div id="stats">
     <h2>Stats</h2>
-    <p>
-      <span id="hunger">Hunger: </span>
-      <span id="boredom">Boredom: </span>
-      <span id="sleep">Sleep: </span>
-    </p>
+      <h3 id="hunger">Hunger </h3 >
+      <h3 id="boredom">Boredom <h3/>
+      <h3 id="sleep">Sleep <h3/>
   </div>
   <div id="background">
-    <img src="images/tamagotchi.gif" alt="TAMAGOTCHI"></img>
+    <img src="images/Tamagotchi_505130960.jpeg" alt="TAMAGOTCHI"></img>
+  </div>
   <div id="buttons">
     <button id="feed">Feed</button>
     <button id="play">Play</button>
-    <button id="sleep">Sleep</button>
-    <button id="lights">Lights</button>
-    <button id="reset">Reset</button>
+    <button id="light">Light</button>
   </div>
-  <form id="start">
-    <label for="name">Name: </label>
-    <input type="text" id="name" name="name" placeholder="Give your pet a name!">
-    <button onclick="name();" type="submit">Start</button>
+  <form id="startGame">
+    <label for="petName">Name: </label>
+    <input type="text" id="petName" name="pet-name" placeholder="Give your pet a name!">
+    <input type="button" onclick="startGame()" value="Start Game">
   </form>
- 
-  
+   
 </body>
 <script src="js/app.js"></script>
   
