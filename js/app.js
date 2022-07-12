@@ -103,7 +103,7 @@ class Tamagotchi {
   }
   dayTime() {
     this.lightsOn = true;
-    document.getElementById("moon").remove();
+    document.getElementById("moon").remove(); // cant get this to work
   }
   changeLights() {
     this.sleep--;
