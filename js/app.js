@@ -61,7 +61,7 @@ class Tamagotchi {
         console.log("testing");
         this.ageUpOne();
       } else if (this.age === 2) {
-        this.ageUptwo();
+        this.ageUpTwo();
         clearInterval(this.ageid);
       }
     }, 4500);
@@ -70,7 +70,7 @@ class Tamagotchi {
   boredomIncrease() {
     this.boredid = setInterval(() => {
       const boredFactor = document.getElementById("bored");
-      boredFactor.innerText = `Bored: ${this.bored}`;
+      boredFactor.innerText = `Bored: ${this.boredom}`;
       this.bored++;
 
       if (this.bored > 10) {
@@ -80,22 +80,22 @@ class Tamagotchi {
     }, 1500);
   }
   ageUpOne() {
-    document.getElementById("pug").setAttribute("src", "images/pug.png");
+    document.getElementById("pug").setAttribute("src", "images/age1.jpeg");
   }
   ageUpTwo() {
-    document.getElementById("pug").setAttribute("src", "images/pug.png");
+    document.getElementById("pug").setAttribute("src", "images/age2.jpeg");
   }
 
-  killedTamagotchi = function () {
-    document.getElementById("pug").setAttribute("src", "images/pug.png");
+  killedTamagotchi() {
+    document.getElementById("pug").setAttribute("src", "images/rip.jpeg");
     clearInterval(this.ageid);
     clearInterval(this.sleepid);
     clearInterval(this.hungerid);
     clearInterval(this.boredid);
-  };
+  }
 
   nightTime() {
-    let night = document.createElementById("img");
+    let night = document.createElement("img");
     night.setAttribute("src", "images/Moon.png");
     night.setAttribute("id", "moon");
     document.body.appendChild(night);
