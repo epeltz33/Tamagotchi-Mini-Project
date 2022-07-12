@@ -50,7 +50,7 @@
     100%{background-color: pink;}
   }
   
-  #weather1 {
+  /* #weather1 {
   animation-name: hover;
   animation-iteration-count: 25;
   animation-duration: 15s;
@@ -66,7 +66,7 @@
     top: 500px; 
     height: 425px;
     transform: scaleX(-1);
-    }
+    } */
   #moon {
     animation-name: floatUp;
     animation-iteration-count: 10;
