@@ -1,2 +1,100 @@
  
+ body { 
+  animation-name: back;
+  animation-iteration-count: 10;
+  animation-duration: 25s;
  
+ }
+ #pug {
+    animation-name: floatUp;
+    animation-duration: 20s;
+    animation-iteration-count: 3;
+    height: 220px;
+  position: absolute; top: 300px; left: 500px;
+ 
+ }
+ 
+ @keyframes floatUp {
+    0%   {left:500px; top:300px;}
+    25%  {left:700px; top:300px;}
+    50%  {left:700px; top:500px;}
+    75%  {left:500px; top:500px;}
+    100% {left:500px; top:300px;}
+ 
+   }
+   
+@keyframes hover {
+    0%   {left:1000px; bottom:500px;}
+    25%  {left:1000px; bottom:480px;}
+    50%  {left:1000px; bottom:500px;}
+    75%  {left:1000px; bottom:490px;}
+    100% {left:1000px; bottom:500px;}
+
+ }   
+ 
+ @keyframes hover2 {
+    0%   {top: 500px; top:400px;}
+    25%  {top: 500px; top:420px;}
+    50%  {top: 500px; top:400px;}
+    75%  {top: 500px; top:410px;}
+    100% {top: 500px; top:400px;}
+  } 
+  
+  @keyframes back{
+    0%  {background-color: pink;}
+    25% {background-color: rgba(194, 245, 178, 0.756);}
+    50% {background-color: rgb(192, 248, 255);}
+    75% {background-color: rgb(239, 247, 171);}
+    100%{background-color: pink;}
+  }
+  
+  #weather1 {
+  animation-name: hover;
+  animation-iteration-count: 25;
+  animation-duration: 15s;
+  position: absolute;
+  left: 900px; bottom: 600px; top: 500px;
+  }
+  
+  #weather2 {
+    animation-name: hover2;
+    animation-iteration-count: 15;
+    animation-duration: 15s;
+    position: absolute;
+    top: 500px; 
+    height: 425px;
+    transform: scaleX(-1);
+    }
+  #moon {
+    animation-name: floatUp;
+    animation-iteration-count: 10;
+    animation-duration: 25s;
+    position: absolute;
+    left: 500px; top: 300px; height: 600px; 
+    }
+    
+  #frame {
+    position: absolute;
+    left: 300px; top: 200px; height: 600px;  width: 600px;
+    
+    }  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  
+  }   
+  
+  footer {
+    position: absolute;
+    left: 400px; bottom: 600px;
+  }
+    
+  h3 {
+    position: absolute;
+    top: 125px; left: 600px;
+    font-size: large;
+  } 
+  
