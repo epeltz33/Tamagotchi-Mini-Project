@@ -18,7 +18,7 @@ class Tamagotchi {
     this.sleep = 0;
     this.boredom = 0;
     this.age = 0;
-    this.lightsOff = true;
+    this.lightsOn = true;
     this.isAlive = true;
   }
   // making a function that will increase hunger by a set interval 2 seconds
@@ -31,7 +31,7 @@ class Tamagotchi {
       if (this.hunger > 10) {
         this.hunger = 10;
         clearInterval(this.hungerid);
-        this.isAlive = false;
+        this.killedTamagotchi();
       }
     }, 2000);
   }
@@ -45,20 +45,23 @@ class Tamagotchi {
       if (this.sleep > 10) {
         this.sleep = 10;
         clearInterval(this.sleepid);
-        this.isAlive = false;
+        this.killedTamagotchi();
       }
     }, 1500);
   }
 
   ageIncrease() {
     this.ageid = setInterval(() => {
+    
       const ageFactor = document.getElementById('age');
+      
       ageFactor.innerText = `Age: ${this.age}`;
+      
       this.age++;
 
       if (this.age === 1) {
         console.log('testing');
-        this.ageUp();
+        this.ageUpOne();
       } else if (this.age === 2) {
         this.ageUptwo();
         clearInterval(this.ageid);
@@ -68,6 +71,99 @@ class Tamagotchi {
 
   }
   
+ boredomIncrease() {
+ 
+ this.boredid = setInterval(() => {
+  const boredFactor = document.getElementById('bored');
+  boredFactor.innerText = `Bored: ${this.bored}`;
+  this.bored++;
+  
+  if (this.bored > 10) {
+      clearInterval(this.boredid);
+      this.killedTamagotchi();
+      
+      }
+      
+    }, 1500);
+    
+ }
+ ageUpOne() {
+  document.getElementById('pug').setAttribute('src', 'images/pug.png');
+  
+}
+ageUpTwo () {
+  document.getElementById('pug').setAttribute('src', 'images/pug.png');
+ 
+}
+
+  
+
+killedTamagotchi = function(){
+  document.getElementById('pug').setAttribute('src', 'images/pug.png');
+  clearInterval(this.ageid);
+  clearInterval(this.sleepid);
+  clearInterval(this.hungerid);
+  clearInterval(this.boredid);
+}
+
+
+
+
+nightTime() {
+  let night = document.createElementById('img');
+  night.setAttribute('src', 'images/Moon.png');
+  night.setAttribute('id', 'moon');
+  document.body.appendChild(night);
+  this.lightsOn = false; // 
+
+}
+dayTime() {
+  this.lightsOn = true;
+  document.getElementById('moon').remove();
+}
+changeLights() {
+ this.sleep --
+ if (this.lightsOn === true) {
+    this.nightTime();
+ } else {
+  this.dayTime();
+  
+  }
+}
+feed() {
+this.hunger --
+}
+
+play() {
+this.boredid --
+}
+beginGame() {
+this.hungerIncrease()
+this.ageIncrease()
+this.boredomIncrease()
+this.sleepIncrease();
+    }
+    
+  }
+  
+  const firstTamagotchi = new Tamagotchi("");
+  console.log(firstTamagotchi);
+  
+  const submitBtn = document.querySelector('button')
+  submitBtn.addEventListener('click', () => {
+    firstTamagotchi.beginGame();
+  
+  })
+  
+document.getElementById('feed').addEventListener('click', () => {
+  firstTamagotchi.feed();
+})
+document.getElementById('lightsOff').addEventListener('click', () => {
+  firstTamagotchi.changeLights();
+})
+document.getElementById('play').addEventListener('click', () => {
+  firstTamagotchi.play();
+})
 
 
 
